@@ -1,4 +1,4 @@
-# kar_master
+# kaar-app
 
 A new Flutter project.
 
