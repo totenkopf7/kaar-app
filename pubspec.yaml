@@ -1,0 +1,50 @@
+name: kaar
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  carousel_slider: ^4.0.0
+  card_swiper: ^3.0.0
+  flutter_spinkit: ^5.1.0
+  
+
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - lib/assets/images/ac.png
+    - lib/assets/images/ac2.png
+    - lib/assets/images/car_service.png
+    - lib/assets/images/carwash.png
+    - lib/assets/images/cleaning.png
+    - lib/assets/images/curtains.png
+    - lib/assets/images/furniture_assembly.png
+    - lib/assets/images/glass.png
+    - lib/assets/images/medical_service.png
+    - lib/assets/images/painting.png
+    - lib/assets/images/plumping.png
+    - lib/assets/images/satellite.png
+    - lib/assets/images/security_camera.png
+    - lib/assets/images/washing_ironing.png
+    - lib/assets/images/slider1.jpg
+    - lib/assets/images/slider2.jpg
+    - lib/assets/images/slider3.jpg
+    - lib/assets/images/logo.png
