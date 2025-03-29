@@ -3,6 +3,7 @@ import 'package:kaar/components/appbar.dart';
 import 'package:kaar/components/dashboard_tile.dart';
 import 'package:kaar/components/colors.dart';
 import 'package:kaar/components/image_swiper.dart';
+import 'package:kaar/screens/booking_screen.dart';
 import 'package:kaar/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -240,12 +241,19 @@ class ServiceDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(serviceName)),
+      backgroundColor: AppColors.background,
+      appBar: AppBar(
+        title: Text(
+          serviceName,
+          style: const TextStyle(color: AppColors.secondary),
+        ),
+        backgroundColor: AppColors.background,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            Icon(serviceIcon, size: 60, color: Theme.of(context).primaryColor),
+            Icon(serviceIcon, size: 60, color: AppColors.primary),
             const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
@@ -253,24 +261,44 @@ class ServiceDetailScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final option = options[index];
                   return Card(
+                    color: AppColors.primary,
                     margin: const EdgeInsets.only(bottom: 12),
                     child: ListTile(
-                      leading: Icon(option.icon),
-                      title: Text(option.title),
+                      leading: Icon(
+                        option.icon,
+                        color: AppColors.background,
+                      ),
+                      title: Text(
+                        option.title,
+                        style: TextStyle(color: AppColors.background),
+                      ),
+
+                      //Only shows dialogue
+                      // onTap: () {
+                      //   // Handle specific service option selection
+                      //   // You can navigate to another screen or show a dialog
+                      //   showDialog(
+                      //     context: context,
+                      //     builder: (context) => AlertDialog(
+                      //       // title: Text('$serviceName - ${option.title}'),
+                      //       content: const Text('Coming Soon'),
+                      //       actions: [
+                      //         TextButton(
+                      //           onPressed: () => Navigator.pop(context),
+                      //           child: const Text('OK'),
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   );
+                      // },
                       onTap: () {
-                        // Handle specific service option selection
-                        // You can navigate to another screen or show a dialog
-                        showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                            // title: Text('$serviceName - ${option.title}'),
-                            content: const Text('Coming Soon'),
-                            actions: [
-                              TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: const Text('OK'),
-                              ),
-                            ],
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BookingScreen(
+                              serviceName: serviceName,
+                              optionName: option.title,
+                            ),
                           ),
                         );
                       },
