@@ -88,6 +88,8 @@ class _BookingScreenState extends State<BookingScreen> {
     }
   }
 
+  
+
   void _handleMapTap(LatLng latlng) {
     setState(() {
       _selectedLocation = latlng;
