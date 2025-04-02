@@ -18,21 +18,33 @@ class BottomNavBar extends StatelessWidget {
       onTap: onTap, // Handle tab selection
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(
+              Icons.home,
+              color: AppColors.secondary,
+            ),
             label: 'Home',
             backgroundColor: AppColors.background),
         BottomNavigationBarItem(
-          icon: Icon(Icons.search),
+          icon: Icon(
+            Icons.search,
+            color: AppColors.secondary,
+          ),
           label: 'Search',
           backgroundColor: AppColors.background,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.book_online),
+          icon: Icon(
+            Icons.book_online,
+            color: AppColors.secondary,
+          ),
           label: 'Bookings',
           backgroundColor: AppColors.background,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.favorite),
+          icon: Icon(
+            Icons.favorite,
+            color: AppColors.secondary,
+          ),
           label: 'Favorites',
           backgroundColor: AppColors.background,
         ),
