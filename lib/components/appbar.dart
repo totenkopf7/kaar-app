@@ -21,11 +21,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           },
         ),
       ),
-      title: Text(title),
+      title: Text(
+        title,
+        style: TextStyle(color: AppColors.secondary),
+      ),
       backgroundColor: AppColors.background,
       actions: [
         IconButton(
           icon: const Icon(Icons.notifications),
+          color: AppColors.secondary,
           onPressed: () {},
         ),
       ],
