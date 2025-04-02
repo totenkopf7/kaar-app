@@ -24,14 +24,17 @@ class BottomNavBar extends StatelessWidget {
         BottomNavigationBarItem(
           icon: Icon(Icons.search),
           label: 'Search',
+          backgroundColor: AppColors.background,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.book_online),
           label: 'Bookings',
+          backgroundColor: AppColors.background,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.favorite),
           label: 'Favorites',
+          backgroundColor: AppColors.background,
         ),
       ],
     );
