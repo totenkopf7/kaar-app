@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:kaar/components/colors.dart';
+import 'package:kaar/screens/login_screen.dart';
 import 'package:kaar/screens/navbar_home.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
       // Navigate to the main screen after loading
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const NavbarHomeScreen()),
+        MaterialPageRoute(builder: (context) => LoginScreen()),
       );
     });
   }

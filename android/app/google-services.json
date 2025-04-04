@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "962288805959",
+    "project_id": "kaar-783a4",
+    "storage_bucket": "kaar-783a4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962288805959:android:69f4fe07bc0bcab3012962",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIBD_ZKAJo3qgcxJZC7xzRHuLQLotKDdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
