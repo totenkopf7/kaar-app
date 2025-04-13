@@ -20,18 +20,18 @@ class DefaultFirebaseOptions {
   }
 
   static FirebaseOptions web = const FirebaseOptions(
-      apiKey: "AIzaSyC0wNBPbj7eDjjhQOg-EQxVrToGxpw_0jg",
-      authDomain: "kaar-783a4.firebaseapp.com",
-      projectId: "kaar-783a4",
-      storageBucket: "kaar-783a4.firebasestorage.app",
-      messagingSenderId: "962288805959",
-      appId: "1:962288805959:web:0d64615a59db73c2012962",
-      measurementId: "G-XPX0VZJEBN");
+      apiKey: "AIzaSyAVBYas_7yQXRNpvhu6mer1XtIRxMO4ZM0",
+      authDomain: "kaar-bc4eb.firebaseapp.com",
+      projectId: "kaar-bc4eb",
+      storageBucket: "kaar-bc4eb.firebasestorage.app",
+      messagingSenderId: "561578805864",
+      appId: "1:561578805864:web:2b78679f3db62044d7c9dd",
+      measurementId: "G-N6WRSJ88BW");
 
   static FirebaseOptions android = const FirebaseOptions(
-    apiKey: "AIzaSyCIBD_ZKAJo3qgcxJZC7xzRHuLQLotKDdU",
-    appId: "1:962288805959:android:69f4fe07bc0bcab3012962",
-    messagingSenderId: "962288805959",
+    apiKey: "AIzaSyBhSBywZuDeK2bjRmYFMIAeFfdgnBuyfVc",
+    appId: "1:561578805864:android:13f769ba786b2d7dd7c9dd",
+    messagingSenderId: "561578805864",
     projectId: "kaar-783a4",
   );
 }

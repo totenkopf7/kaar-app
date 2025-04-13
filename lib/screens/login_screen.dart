@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:kaar/components/colors.dart';
 import 'package:kaar/screens/home_screen.dart';
 import 'package:kaar/screens/navbar_home.dart'; // Import your home screen
 
@@ -15,6 +16,13 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _isCodeSent = false;
 
   Future<void> _verifyPhoneNumber() async {
+    if (_phoneController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Please enter your phone number')),
+      );
+      return;
+    }
+
     await FirebaseAuth.instance.verifyPhoneNumber(
       phoneNumber: _phoneController.text,
       verificationCompleted: (PhoneAuthCredential credential) async {
@@ -45,23 +53,34 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> _signInWithPhoneNumber() async {
     final String smsCode = _codeController.text;
-    final AuthCredential credential = PhoneAuthProvider.credential(
-      verificationId: _verificationId!,
-      smsCode: smsCode,
-    );
+    try {
+      final AuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: _verificationId!,
+        smsCode: smsCode,
+      );
 
-    await FirebaseAuth.instance.signInWithCredential(credential);
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => HomeScreen()),
-    );
+      await FirebaseAuth.instance.signInWithCredential(credential);
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error: ${e.toString()}')),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: Text('Login'),
+        backgroundColor: AppColors.primary,
+        title: const Text(
+          'Login',
+          style: TextStyle(color: AppColors.background),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -70,21 +89,55 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             TextField(
               controller: _phoneController,
-              decoration: InputDecoration(labelText: 'Phone Number'),
+              cursorColor: AppColors.primary,
+              style: const TextStyle(color: AppColors.primary),
+              decoration: const InputDecoration(
+                labelText: 'Phone Number',
+                labelStyle: TextStyle(color: AppColors.primary),
+                // border: OutlineInputBorder(
+                //   borderRadius: BorderRadius.all(Radius.circular(8)),
+                //   borderSide:
+                //       BorderSide(color: AppColors.primary), // default border
+                // ),
+                // enabledBorder: OutlineInputBorder(
+                //   borderRadius: BorderRadius.all(Radius.circular(8)),
+                //   borderSide: BorderSide(color: AppColors.primary),
+                // ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                  borderSide: BorderSide(color: AppColors.primary, width: 2),
+                ),
+              ),
               keyboardType: TextInputType.phone,
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             if (_isCodeSent)
               TextField(
                 controller: _codeController,
-                decoration: InputDecoration(labelText: 'Verification Code'),
+                cursorColor: AppColors.primary,
+                style: const TextStyle(color: AppColors.primary),
+                decoration: const InputDecoration(
+                  labelText: 'Verification Code',
+                  labelStyle: TextStyle(color: AppColors.primary),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                    borderSide: BorderSide(color: AppColors.primary, width: 2),
+                  ),
+                ),
                 keyboardType: TextInputType.number,
               ),
             SizedBox(height: 16),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: AppColors.primary,
+              ),
               onPressed:
                   _isCodeSent ? _signInWithPhoneNumber : _verifyPhoneNumber,
-              child: Text(_isCodeSent ? 'Verify Code' : 'Send Code'),
+              child: Text(
+                _isCodeSent ? 'Verify Code' : 'Send Code',
+                style: const TextStyle(
+                    fontSize: 16.0, color: AppColors.background),
+              ),
             ),
           ],
         ),

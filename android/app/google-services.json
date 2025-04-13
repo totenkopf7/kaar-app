@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "962288805959",
-    "project_id": "kaar-783a4",
-    "storage_bucket": "kaar-783a4.firebasestorage.app"
+    "project_number": "561578805864",
+    "project_id": "kaar-bc4eb",
+    "storage_bucket": "kaar-bc4eb.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:962288805959:android:69f4fe07bc0bcab3012962",
+        "mobilesdk_app_id": "1:561578805864:android:13f769ba786b2d7dd7c9dd",
         "android_client_info": {
-          "package_name": "com.android.application"
+          "package_name": "com.example.kaar"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCIBD_ZKAJo3qgcxJZC7xzRHuLQLotKDdU"
+          "current_key": "AIzaSyBhSBywZuDeK2bjRmYFMIAeFfdgnBuyfVc"
         }
       ],
       "services": {
