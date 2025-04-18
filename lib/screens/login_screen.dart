@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         title: const Text(
-          'Login',
+          'Login Page',
           style: TextStyle(color: AppColors.background),
         ),
       ),
