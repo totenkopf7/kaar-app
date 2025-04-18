@@ -22,6 +22,11 @@ dependencies:
   geolocator: ^11.1.0
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
+  cloud_firestore: ^4.8.0
+  http: ^1.1.0
+  flutter_dotenv: ^5.0.2
+  firebase_messaging: ^14.7.0
+
 
 dev_dependencies:
   flutter_test:
@@ -52,3 +57,4 @@ flutter:
     - lib/assets/images/slider2.jpg
     - lib/assets/images/slider3.jpg
     - lib/assets/images/logo.png
+    - lib/.env
