@@ -57,4 +57,3 @@ flutter:
     - lib/assets/images/slider2.jpg
     - lib/assets/images/slider3.jpg
     - lib/assets/images/logo.png
-    - lib/.env
