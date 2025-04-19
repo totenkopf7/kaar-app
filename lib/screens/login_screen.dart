@@ -129,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(height: 16),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: AppColors.primary,
+                backgroundColor: AppColors.primary,
               ),
               onPressed:
                   _isCodeSent ? _signInWithPhoneNumber : _verifyPhoneNumber,
